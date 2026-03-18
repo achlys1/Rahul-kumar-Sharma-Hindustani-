@@ -3,138 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahul Kumar Sharma | Portfolio</title>
+    <title>Rahul Kumar Sharma | Premium Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
-        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
-        h1, h2, h3, .eng-font { font-family: 'Montserrat', sans-serif; }
-        
-        /* Digital Tiranga Animation */
-        .tiranga-bg {
-            background: linear-gradient(-45deg, #FF9933, #FFFFFF, #138808);
-            background-size: 400% 400%;
-            animation: gradientBG 12s ease infinite;
+        body { 
+            background-color: #030712; /* Deep dark background */
+            font-family: 'Poppins', sans-serif; 
+            color: #f3f4f6;
+            overflow-x: hidden; 
+            scroll-behavior: smooth;
         }
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .eng-font { font-family: 'Montserrat', sans-serif; }
+        
+        /* High-End Fluid Animations (Background Orbs) */
+        @keyframes float-saffron {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(100px, -100px) scale(1.2); }
         }
-        
-        .navy-overlay { background-color: rgba(0, 0, 128, 0.85); }
-        
-        /* Parchment Style for Poetry */
-        .parchment-bg {
-            background-color: #fdf5e6;
-            background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.1);
+        @keyframes float-green {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(-100px, 100px) scale(1.3); }
+        }
+        @keyframes float-navy {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(50px, 50px) scale(1.5); }
         }
 
-        /* Gold Gradient Text */
-        .text-gold {
-            background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .glow-saffron { background: #FF9933; filter: blur(120px); animation: float-saffron 15s ease-in-out infinite; }
+        .glow-green { background: #138808; filter: blur(120px); animation: float-green 18s ease-in-out infinite; }
+        .glow-navy { background: #000080; filter: blur(150px); animation: float-navy 20s ease-in-out infinite; }
+
+        /* The Ultimate Glassmorphism Effect */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 1.5rem;
         }
+        
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(-5px);
+            transition: all 0.4s ease;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #030712; }
+        ::-webkit-scrollbar-thumb { background: #1f2937; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #FF9933; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="relative antialiased">
 
     <audio id="bg-audio" loop>
-        <source src="saare_jahan_se_achha.mp3" type="audio/mpeg">
+        <source src="saare.mp3" type="audio/mpeg">
     </audio>
 
-    <nav class="fixed w-full z-50 bg-blue-900 bg-opacity-90 backdrop-blur-md shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
-            <div class="text-white font-bold text-xl eng-font tracking-wider">R.K. SHARMA</div>
-            <div class="hidden md:flex space-x-6 text-sm text-gray-200 eng-font font-semibold">
-                <a href="#about" class="hover:text-orange-400 transition">ABOUT</a>
-                <a href="#experience" class="hover:text-orange-400 transition">EXPERIENCE</a>
-                <a href="#awards" class="hover:text-orange-400 transition">AWARDS & CERTIFICATES</a>
-                <a href="#poetry" class="hover:text-orange-400 transition">CREATIVE CORNER</a>
+    <div class="fixed top-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full glow-saffron opacity-40 z-[-1]"></div>
+    <div class="fixed bottom-[-10%] right-[-10%] w-[700px] h-[700px] rounded-full glow-green opacity-30 z-[-1]"></div>
+    <div class="fixed top-[30%] left-[20%] w-[800px] h-[800px] rounded-full glow-navy opacity-50 z-[-1] mix-blend-screen"></div>
+
+    <nav class="fixed w-full z-50 glass-card !rounded-none !border-t-0 !border-l-0 !border-r-0 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="text-xl font-bold tracking-widest eng-font text-white">R.K. SHARMA</div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold eng-font text-gray-300">
+                <a href="#about" class="hover:text-orange-400 transition">PRIDE</a>
+                <a href="#experience" class="hover:text-green-400 transition">EXPERIENCE</a>
+                <a href="#certs" class="hover:text-blue-400 transition">AWARDS</a>
+                <a href="#poetry" class="hover:text-orange-400 transition">POETRY</a>
             </div>
         </div>
     </nav>
 
-    <section class="relative h-screen flex items-center justify-center tiranga-bg overflow-hidden">
-        <div class="absolute inset-0 navy-overlay"></div>
-        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
-            <div class="flex justify-center space-x-4 mb-6 text-white text-5xl">
-                <i class="fas fa-flag"></i> <i class="fas fa-anchor"></i>
+    <section class="min-h-screen flex items-center justify-center pt-20 px-4">
+        <div class="glass-card p-10 md:p-16 text-center max-w-5xl w-full">
+            <div class="flex justify-center space-x-6 mb-6 text-white text-5xl opacity-80">
+                <i class="fas fa-flag animate-pulse text-orange-400"></i> 
+                <i class="fas fa-anchor text-blue-400"></i>
             </div>
             
-            <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 tracking-wide drop-shadow-lg eng-font">
+            <h1 class="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-white to-green-400 mb-4 tracking-tight eng-font">
                 RAHUL KUMAR SHARMA
             </h1>
-            <p class="text-xl md:text-2xl text-gray-200 mb-6 font-light tracking-widest uppercase eng-font">
-                Indian Navy Veteran <span class="text-orange-400">•</span> BBA Graduate <span class="text-green-400">•</span> Manager
+            <p class="text-lg md:text-2xl text-gray-300 mb-8 font-medium tracking-[0.2em] uppercase eng-font">
+                Indian Navy Veteran <span class="text-orange-500 font-black">|</span> BBA Graduate <span class="text-green-500 font-black">|</span> Manager
             </p>
             
-            <div class="inline-block bg-white text-blue-900 px-6 py-2 rounded-full font-semibold mb-10 shadow-lg text-lg border-l-4 border-orange-500 border-r-4 border-green-500">
+            <div class="inline-block bg-white/10 backdrop-blur-md text-white px-8 py-3 rounded-full font-bold mb-10 text-lg border-l-4 border-orange-500 border-r-4 border-green-500">
                 अनुशासन से प्रबंधन तक: एक गौरवशाली यात्रा
             </div>
             <br>
             
-            <button id="audio-btn" class="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6 py-3 shadow-2xl transition duration-300 border-2 border-white flex items-center mx-auto space-x-3">
-                <i id="audio-icon" class="fas fa-play text-xl"></i> 
-                <span class="font-medium text-lg">राष्ट्र धुन सुनें (Play Audio)</span>
+            <button id="audio-btn" class="group relative inline-flex items-center justify-center px-8 py-4 font-bold text-white transition-all duration-300 bg-transparent border border-white/50 rounded-full hover:bg-white hover:text-black hover:shadow-[0_0_20px_rgba(255,255,255,0.5)]">
+                <i id="audio-icon" class="fas fa-play text-xl mr-3 group-hover:animate-bounce"></i> 
+                <span class="text-lg">सारे जहाँ से अच्छा सुनें (Play Tune)</span>
             </button>
         </div>
     </section>
 
-    <section id="about" class="py-20 bg-white">
-        <div class="max-w-5xl mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-blue-900 mb-8 uppercase tracking-wider eng-font">
-                राष्ट्र गौरव एवं सेवा <br><span class="text-xl text-gray-500 font-normal capitalize">The Pride of Service</span>
+    <section id="about" class="py-24 px-4">
+        <div class="max-w-4xl mx-auto glass-card p-10 md:p-14 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-orange-400 via-white to-green-400"></div>
+            <h2 class="text-3xl md:text-4xl font-black text-white mb-6 uppercase tracking-wider eng-font">
+                राष्ट्र गौरव एवं सेवा <span class="text-xl text-gray-400 font-normal capitalize block mt-2">The Pride of Service</span>
             </h2>
-            <div class="bg-blue-50 border-l-8 border-blue-900 p-8 rounded-lg shadow-md text-left relative overflow-hidden">
-                <i class="fas fa-quote-left text-4xl text-blue-200 absolute top-4 left-4"></i>
-                <p class="text-lg md:text-xl text-gray-700 leading-relaxed relative z-10 pl-8 font-medium italic">
-                    "भारतीय तिरंगा केवल एक कपड़ा नहीं, बल्कि 140 करोड़ भारतीयों की धड़कन और हमारे बलिदानों का प्रतीक है। एक नौसैनिक के रूप में, इस ध्वज की रक्षा करना और 'शं नो वरुणः' के आदर्श वाक्य के साथ समुद्र की लहरों पर भारत की संप्रभुता को बनाए रखना मेरा परम सौभाग्य रहा है। राष्ट्रवाद मेरे लिए केवल एक शब्द नहीं, बल्कि मेरा जीवन है। यह पोर्टफोलियो एक सैनिक के अनुशासन (Discipline) और एक प्रबंधक (Manager) की कुशलता का संगम है, जो माँ भारती की सेवा से प्रेरित है।"
-                </p>
-            </div>
+            <i class="fas fa-quote-left text-4xl text-white/20 absolute top-10 right-10"></i>
+            <p class="text-lg md:text-xl text-gray-300 leading-relaxed font-light italic">
+                "भारतीय तिरंगा केवल एक कपड़ा नहीं, बल्कि 140 करोड़ भारतीयों की धड़कन और हमारे बलिदानों का प्रतीक है। एक नौसैनिक के रूप में, इस ध्वज की रक्षा करना और 'शं नो वरुणः' के आदर्श वाक्य के साथ समुद्र की लहरों पर भारत की संप्रभुता को बनाए रखना मेरा परम सौभाग्य रहा है। राष्ट्रवाद मेरे लिए केवल एक शब्द नहीं, बल्कि मेरा जीवन है। यह पोर्टफोलियो एक सैनिक के अनुशासन (Discipline) और एक प्रबंधक (Manager) की कुशलता का संगम है, जो माँ भारती की सेवा से प्रेरित है।"
+            </p>
         </div>
     </section>
 
-    <section id="experience" class="py-20 bg-gray-100">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-blue-900 mb-12 uppercase eng-font">Professional Timeline</h2>
+    <section id="experience" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-bold text-center text-white mb-12 uppercase tracking-widest eng-font">Professional Timeline</h2>
             
-            <div class="grid md:grid-cols-2 gap-12">
-                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-orange-500">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6 eng-font"><i class="fas fa-ship text-blue-900 mr-2"></i> Operational Experience</h3>
-                    <div class="mb-6">
-                        <div class="text-xl font-semibold text-blue-900">Indian Navy (2009–2018)</div>
-                        <div class="text-gray-600 mb-2">Fleet Support & Security Operations</div>
-                        <ul class="list-disc pl-5 text-gray-700 space-y-1">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="glass-card p-8 border-t-2 border-orange-500">
+                    <h3 class="text-2xl font-bold text-white mb-6 eng-font"><i class="fas fa-ship text-blue-400 mr-3"></i>Operational Experience</h3>
+                    <div class="border-l-2 border-white/20 pl-6 ml-3">
+                        <div class="text-xl font-semibold text-orange-300">Indian Navy</div>
+                        <div class="text-sm text-gray-400 mb-4 eng-font">Duration: 2009–2018</div>
+                        <ul class="list-disc pl-5 text-gray-300 space-y-2 font-light">
                             <li>अनुशासन एवं सुरक्षा प्रोटोकॉल का कठोरता से पालन।</li>
                             <li>फ्लीट और बेस सपोर्ट ऑपरेशंस में महत्वपूर्ण भागीदारी।</li>
-                            <li>टीम लीड, संसाधन प्रबंधन (Resource Management) और समयबद्ध डिलीवरी।</li>
+                            <li>टीम लीड, संसाधन प्रबंधन और समयबद्ध डिलीवरी।</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-green-500">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6 eng-font"><i class="fas fa-graduation-cap text-blue-900 mr-2"></i> Educational Excellence</h3>
-                    <div class="space-y-4 text-gray-700">
-                        <div class="flex justify-between border-b pb-2">
-                            <span class="font-semibold text-blue-900">BBA (Management)</span>
-                            <span class="text-gray-500">JMI University, 2024 (68%)</span>
+                <div class="glass-card p-8 border-t-2 border-green-500">
+                    <h3 class="text-2xl font-bold text-white mb-6 eng-font"><i class="fas fa-user-graduate text-green-400 mr-3"></i>Academic Journey</h3>
+                    <div class="space-y-6">
+                        <div class="border-l-2 border-white/20 pl-6 ml-3 relative">
+                            <div class="absolute w-3 h-3 bg-green-400 rounded-full -left-[7px] top-1"></div>
+                            <div class="font-semibold text-white">BBA (Management) - 68%</div>
+                            <div class="text-gray-400 text-sm">JMI University, 2024</div>
                         </div>
-                        <div class="flex justify-between border-b pb-2">
-                            <span class="font-semibold text-blue-900">MA (Political Science)</span>
-                            <span class="text-gray-500">IGNOU Delhi, 2018 (67%)</span>
+                        <div class="border-l-2 border-white/20 pl-6 ml-3 relative">
+                            <div class="absolute w-3 h-3 bg-gray-400 rounded-full -left-[7px] top-1"></div>
+                            <div class="font-semibold text-white">MA (Political Science) - 67%</div>
+                            <div class="text-gray-400 text-sm">IGNOU Delhi, 2018</div>
                         </div>
-                        <div class="flex justify-between border-b pb-2">
-                            <span class="font-semibold text-blue-900">B.Sc (Science)</span>
-                            <span class="text-gray-500">Bhoj University, 2014 (65%)</span>
-                        </div>
-                        <div class="flex justify-between pb-2">
-                            <span class="font-semibold text-blue-900">10+2 (Science)</span>
-                            <span class="text-gray-500">BSHS Bhind (MP), 2008 (73%)</span>
+                        <div class="border-l-2 border-white/20 pl-6 ml-3 relative">
+                            <div class="absolute w-3 h-3 bg-gray-400 rounded-full -left-[7px] top-1"></div>
+                            <div class="font-semibold text-white">B.Sc (Science) - 65%</div>
+                            <div class="text-gray-400 text-sm">Bhoj University, 2014</div>
                         </div>
                     </div>
                 </div>
@@ -142,62 +163,75 @@
         </div>
     </section>
 
-    <section id="awards" class="py-20 bg-blue-900 text-white">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-gold mb-12 uppercase eng-font">Honors & Certifications</h2>
+    <section id="certs" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-white mb-12 uppercase tracking-widest eng-font">Honors & Certifications</h2>
             
             <div class="grid md:grid-cols-2 gap-8 mb-16">
-                <div class="bg-white bg-opacity-10 p-6 rounded-xl border border-gold backdrop-blur-sm hover:scale-105 transition transform duration-300">
-                    <i class="fas fa-certificate text-5xl text-gold mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">Small Business & Rural Entrepreneurship</h3>
-                    <p class="text-gray-300">Institute of Co-operative Management, Bhopal (2025)</p>
+                <div class="glass-card p-8 flex items-center space-x-6 border border-yellow-500/30">
+                    <i class="fas fa-certificate text-6xl text-yellow-500 drop-shadow-[0_0_15px_rgba(234,179,8,0.5)]"></i>
+                    <div class="text-left">
+                        <h3 class="text-xl font-bold text-white mb-1">Small Business & Rural Entrepreneurship</h3>
+                        <p class="text-gray-400 text-sm">Institute of Co-operative Management, Bhopal (2025)</p>
+                    </div>
                 </div>
-                <div class="bg-white bg-opacity-10 p-6 rounded-xl border border-gold backdrop-blur-sm hover:scale-105 transition transform duration-300">
-                    <i class="fas fa-shield-alt text-5xl text-gold mb-4"></i>
-                    <h3 class="text-xl font-bold mb-2">LMEQ & Security Orientation Course</h3>
-                    <p class="text-gray-300">Indian Navy (Professional Military Training)</p>
+                <div class="glass-card p-8 flex items-center space-x-6 border border-blue-500/30">
+                    <i class="fas fa-shield-alt text-6xl text-blue-400 drop-shadow-[0_0_15px_rgba(96,165,250,0.5)]"></i>
+                    <div class="text-left">
+                        <h3 class="text-xl font-bold text-white mb-1">LMEQ & Security Orientation Course</h3>
+                        <p class="text-gray-400 text-sm">Indian Navy Professional Training</p>
+                    </div>
                 </div>
             </div>
 
-            <h3 class="text-2xl font-semibold text-gray-300 mb-6 eng-font">Medal Gallery</h3>
-            <div class="flex flex-wrap justify-center gap-4 text-sm font-medium">
-                <span class="bg-blue-800 px-6 py-3 rounded-full border border-blue-700 shadow-lg">Videsh Seva Medal</span>
-                <span class="bg-blue-800 px-6 py-3 rounded-full border border-blue-700 shadow-lg">Long Service Medal (9 Yrs)</span>
-                <span class="bg-blue-800 px-6 py-3 rounded-full border border-blue-700 shadow-lg">75th Anniversary Medal</span>
-                <span class="bg-blue-800 px-6 py-3 rounded-full border border-blue-700 shadow-lg">Long Sea Service Medal</span>
+            <h3 class="text-xl font-semibold text-gray-400 mb-6 eng-font">Indian Navy Medals Gallery</h3>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="glass-card px-6 py-3 font-medium text-sm">Videsh Seva Medal</span>
+                <span class="glass-card px-6 py-3 font-medium text-sm">Long Service Medal (9 Years)</span>
+                <span class="glass-card px-6 py-3 font-medium text-sm">75th Anniversary Medal</span>
+                <span class="glass-card px-6 py-3 font-medium text-sm">Long Sea Service Medal</span>
             </div>
         </div>
     </section>
 
-    <section id="poetry" class="py-20 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold text-blue-900 mb-4 uppercase eng-font">The Creative Corner</h2>
-            <p class="text-gray-600 mb-8">विचारों को शब्दों में पिरोना और राजनीतिक परिदृश्य को समझना</p>
+    <section id="poetry" class="py-24 px-4">
+        <div class="max-w-4xl mx-auto text-center glass-card p-12 relative">
+            <i class="fas fa-leaf text-5xl text-orange-400/50 absolute top-10 left-10"></i>
+            <i class="fas fa-snowflake text-5xl text-blue-300/50 absolute bottom-10 right-10"></i>
             
-            <div class="parchment-bg p-10 rounded-lg text-gray-800 border-2 border-yellow-800 shadow-2xl mx-auto">
-                <i class="fas fa-feather-alt text-4xl text-yellow-800 mb-4 opacity-50"></i>
-                <h3 class="text-xl font-bold mb-4 border-b border-yellow-800 pb-2 inline-block">काव्य संग्रह</h3>
-                <p class="italic text-lg leading-loose">
-                    (यहाँ आप अपने भैया की कोई पसंदीदा कविता लिख सकते हैं या उनकी आवाज़ में रिकॉर्ड किया गया कोई छोटा ऑडियो क्लिप जोड़ सकते हैं।)
-                    <br><br>
-                    "लहरों से डर कर नौका पार नहीं होती,<br>
-                    कोशिश करने वालों की कभी हार नहीं होती..."
+            <h2 class="text-4xl font-black text-white mb-4 uppercase tracking-widest eng-font">
+                The Creative Corner
+            </h2>
+            <p class="text-gray-400 mb-10">Poetry • Reflections • Nationalism</p>
+            
+            <div class="text-xl md:text-3xl leading-relaxed font-light text-gray-200 space-y-6">
+                <p>
+                    <span class="text-orange-300 font-medium">पतझड़ (Autumn)</span> की आंधियों में जो डटा रहा,<br>
+                    पत्तों सा झड़कर भी, जड़ों से जो जुड़ा रहा।
+                </p>
+                <p>
+                    <span class="text-blue-200 font-medium">सर्दियों (Winter)</span> की ठिठुरती रातों में,<br>
+                    सरहद की लहरों पर जो खड़ा रहा।
+                </p>
+                <p>
+                    अब <span class="text-green-400 font-medium">वसंत (Spring)</span> की नई उम्मीदों का यह आगाज़ है,<br>
+                    मेरे भारत के नौसैनिक का, सिविलियन दुनिया में यह नया परवाज़ है।
                 </p>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-900 text-gray-400 py-12 text-center">
+    <footer class="glass-card !border-b-0 !border-l-0 !border-r-0 !rounded-none mt-10 py-12 text-center">
         <div class="max-w-4xl mx-auto px-4">
-            <h3 class="text-white text-xl font-semibold mb-2">Contact Details</h3>
-            <p><i class="fas fa-envelope mr-2"></i> rahul_gohad@rediffmail.com</p>
-            <p class="mb-6"><i class="fas fa-map-marker-alt mr-2"></i> Gwalior, Madhya Pradesh</p>
-            
-            <hr class="border-gray-800 mb-6">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-gray-400 hover:text-white text-2xl transition"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:rahul_gohad@rediffmail.com" class="text-gray-400 hover:text-white text-2xl transition"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="text-gray-400 mb-8"><i class="fas fa-map-marker-alt mr-2 text-red-400"></i> Gwalior, Madhya Pradesh</p>
             
             <div class="eng-font">
-                <p class="mb-2">This digital portfolio was thoughtfully designed and developed by <span class="text-white font-bold tracking-wider">Likhakriti</span>.</p>
-                <p class="text-sm italic">Crafting digital identities with purpose and pride. Jai Hind! 🇮🇳</p>
+                <p class="mb-2 text-gray-300">This premium digital portfolio was thoughtfully designed and developed by <a href="https://github.com/achlys1" target="_blank" class="text-white font-bold tracking-widest hover:text-orange-400 transition">LIKHAKRITI</a>.</p>
+                <p class="text-sm italic text-gray-500">Crafting digital identities with purpose and pride. Jai Hind! 🇮🇳</p>
             </div>
         </div>
     </footer>
@@ -211,13 +245,14 @@
             if (audio.paused) {
                 audio.play();
                 audioIcon.classList.remove('fa-play');
-                audioIcon.classList.add('fa-pause');
+                audioIcon.classList.add('fa-pause', 'text-orange-500');
             } else {
                 audio.pause();
-                audioIcon.classList.remove('fa-pause');
+                audioIcon.classList.remove('fa-pause', 'text-orange-500');
                 audioIcon.classList.add('fa-play');
             }
         });
     </script>
 </body>
-</html>
+    </html>
+    
