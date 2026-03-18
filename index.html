@@ -263,6 +263,30 @@
             }
         });
     </script>
+            <script>
+        const audio = document.getElementById('bg-audio');
+        
+        // Function to play audio
+        const startAudio = () => {
+            audio.play().then(() => {
+                // If it successfully plays, remove these event listeners so it doesn't keep trying
+                document.body.removeEventListener('click', startAudio);
+                document.body.removeEventListener('scroll', startAudio);
+                document.body.removeEventListener('touchstart', startAudio);
+            }).catch(error => {
+                console.log("Browser blocked autoplay. Waiting for user interaction...");
+            });
+        };
+
+        // Attempt to play immediately (Browsers usually block this)
+        startAudio();
+
+        // The Magic Trick: Play the moment the user clicks, scrolls, or taps anywhere
+        document.body.addEventListener('click', startAudio);
+        document.body.addEventListener('scroll', startAudio);
+        document.body.addEventListener('touchstart', startAudio);
+            </script>
+        
 </body>
     </html>
     
