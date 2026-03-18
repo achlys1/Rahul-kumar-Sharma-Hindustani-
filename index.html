@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul Kumar Sharma | Indian Navy Veteran</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        /* तिरंगा एनिमेटेड बैकग्राउंड */
+        .tiranga-bg {
+            background: linear-gradient(-45deg, #FF9933, #FFFFFF, #138808);
+            background-size: 400% 400%;
+            animation: gradientBG 10s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        /* इंडियन नेवी का गहरा नीला रंग (Overlay) */
+        .navy-overlay {
+            background-color: rgba(0, 0, 128, 0.75); 
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-900 bg-gray-100">
+
+    <audio id="bg-audio" loop>
+        <source src="SAARE_JAHAN_SE_ACHHA_LINK.mp3" type="audio/mpeg">
+    </audio>
+
+    <section class="relative h-screen flex items-center justify-center tiranga-bg overflow-hidden">
+        <div class="absolute inset-0 navy-overlay"></div>
+        
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-4 tracking-wide drop-shadow-lg">
+                राहुल कुमार शर्मा
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-200 mb-6 font-light tracking-wider uppercase">
+                Indian Navy Veteran <span class="text-orange-400">•</span> BBA Graduate <span class="text-green-400">•</span> Manager
+            </p>
+            
+            <div class="inline-block bg-white text-blue-900 px-6 py-2 rounded-full font-semibold mb-10 shadow-lg text-lg">
+                अनुशासन से प्रबंधन तक: एक गौरवशाली यात्रा
+            </div>
+            
+            <br>
+            
+            <button id="audio-btn" class="bg-orange-500 hover:bg-orange-600 text-white rounded-full px-6 py-3 shadow-2xl transition duration-300 border-2 border-white flex items-center mx-auto space-x-3">
+                <i id="audio-icon" class="fas fa-play text-xl"></i> 
+                <span class="font-medium text-lg">राष्ट्र धुन सुनें</span>
+            </button>
+        </div>
+    </section>
+
+    <script>
+        const audio = document.getElementById('bg-audio');
+        const audioBtn = document.getElementById('audio-btn');
+        const audioIcon = document.getElementById('audio-icon');
+
+        audioBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                audioIcon.classList.remove('fa-play');
+                audioIcon.classList.add('fa-pause');
+            } else {
+                audio.pause();
+                audioIcon.classList.remove('fa-pause');
+                audioIcon.classList.add('fa-play');
+            }
+        });
+    </script>
+</body>
+</html>
